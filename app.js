@@ -5,12 +5,16 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
+  switch (req.url) {
+    case '/':
+      res.write('City Explorer server operational.');
+      res.end();
+      break;
+    case '/api/getCities':
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(resources.getCities()));
+      break;
+  }
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-  console.log(resources.getCities());
-});
+server.listen(port, hostname);
