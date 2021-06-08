@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResourceService {
+
+  getCitiesUrl = 'http://localhost:3000/api/getCities';
   
   constructor(private http: HttpClient) { }
 
-  getCities(): string[] {
-    let cities = this.http.get('localhost:3000');
-    console.log();
-    return [];
+  getCities() {
+    return this.http.get(this.getCitiesUrl);
+    // return of('{"cities":["Jerusalem","New York","Paris","Rome","Cairo","London","Tokyo","Tel Aviv"]}');
+    // return '{"cities":["Jerusalem","New York","Paris","Rome","Cairo","London","Tokyo","Tel Aviv"]}';
   }
 }

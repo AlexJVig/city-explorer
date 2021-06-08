@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResourceService } from '../resource.service';
 
 @Component({
   selector: 'app-my-autocomplete',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyAutocompleteComponent implements OnInit {
 
-  constructor() { }
+  cityList = { cities: [] };
+
+  constructor(private resourceService: ResourceService) { }
 
   ngOnInit(): void {
+    this.resourceService.getCities()
+      .subscribe((data: any) => this.cityList.cities = data.cities);
   }
 
 }
