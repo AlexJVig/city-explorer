@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ResourceService } from '../resource.service';
 
 @Component({
@@ -8,11 +8,13 @@ import { ResourceService } from '../resource.service';
 })
 export class MyAutocompleteComponent implements OnInit {
 
+  @Output() searchLaunchEvent = new EventEmitter<string>();
+
   cityList = { cities: [] };
 
   showDropDown = false;
 
-  searchValue = "";
+  searchValue = '';
 
   constructor(private resourceService: ResourceService) { }
 
@@ -31,6 +33,7 @@ export class MyAutocompleteComponent implements OnInit {
 
   selectValue(cityName: any) {
     this.searchValue = cityName;
+    this.searchLaunchEvent.emit(this.searchValue);
     this.showDropDown = false;
   }
 
