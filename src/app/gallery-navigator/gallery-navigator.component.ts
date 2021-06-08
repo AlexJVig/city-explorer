@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
+
+const numberOfResults = 5;
 
 @Component({
   selector: 'app-gallery-navigator',
   templateUrl: './gallery-navigator.component.html',
   styleUrls: ['./gallery-navigator.component.css']
 })
-export class GalleryNavigatorComponent implements OnInit {
+export class GalleryNavigatorComponent {
+
+  @Output() navigationEvent = new EventEmitter<string>();
+
+  numberArray = Array(numberOfResults).fill(0).map((x, i) => i);
 
   constructor() { }
 
-  ngOnInit(): void {
+  navigateTo(arg: string) {
+    this.navigationEvent.emit(arg);
   }
 
 }

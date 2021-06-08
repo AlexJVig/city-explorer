@@ -1,0 +1,27 @@
+.my-button {
+    height: 20px;
+    width: 37px;
+    background: #F6F6F6;
+    border-style: solid;
+    border-color: blue;
+    border-width: 1px;
+    color: blue;
+    cursor: pointer;
+    text-align: center;
+    float: left;
+}
+
+.my-button:hover {
+    color: green;
+    background: #C2C2C2;
+}
+
+.direction-navigator-back {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.direction-navigator-forward {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
