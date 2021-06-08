@@ -13,10 +13,27 @@ export class GalleryNavigatorComponent {
 
   numberArray = Array(numberOfResults).fill(0).map((x, i) => i);
 
+  currentIndex = 0;
+
   constructor() { }
 
-  navigateTo(arg: any) {
+  navigateTo(arg: number) {
     this.navigationEvent.emit(arg);
+    this.currentIndex = arg;
+  }
+
+  navigateLeft() {
+    if (this.currentIndex > 0) {
+      this.currentIndex -= 1;
+      this.navigateTo(this.currentIndex);
+    }
+  }
+
+  navigateRight() {
+    if (this.currentIndex < numberOfResults - 1) {
+      this.currentIndex += 1;
+      this.navigateTo(this.currentIndex);
+    }
   }
 
 }

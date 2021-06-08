@@ -1,5 +1,5 @@
 <div>
-    <div class="my-button direction-navigator-back unselectable">&#60;&#60;</div>
+    <div (click)="navigateLeft()" class="my-button direction-navigator-left unselectable">&#60;&#60;</div>
     <div *ngFor="let navButton of numberArray" (click)="navigateTo(navButton)" class="my-button unselectable">{{ navButton + 1 }}</div>
-    <div class="my-button direction-navigator-forward unselectable">&#62;&#62;</div>
+    <div (click)="navigateRight()" class="my-button direction-navigator-right unselectable">&#62;&#62;</div>
 </div>

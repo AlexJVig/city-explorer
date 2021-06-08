@@ -16,12 +16,12 @@
     background: #C2C2C2;
 }
 
-.direction-navigator-back {
+.direction-navigator-left {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
-.direction-navigator-forward {
+.direction-navigator-right {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
