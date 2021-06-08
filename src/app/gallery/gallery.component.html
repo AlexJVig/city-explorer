@@ -1,2 +1,2 @@
 <img [src]="currentImagePath" />
-<app-gallery-navigator></app-gallery-navigator>
+<app-gallery-navigator (navigationEvent)="switchPhoto($event)"></app-gallery-navigator>

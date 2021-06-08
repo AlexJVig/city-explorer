@@ -9,13 +9,13 @@ const numberOfResults = 5;
 })
 export class GalleryNavigatorComponent {
 
-  @Output() navigationEvent = new EventEmitter<string>();
+  @Output() navigationEvent = new EventEmitter<number>();
 
   numberArray = Array(numberOfResults).fill(0).map((x, i) => i);
 
   constructor() { }
 
-  navigateTo(arg: string) {
+  navigateTo(arg: any) {
     this.navigationEvent.emit(arg);
   }
 
