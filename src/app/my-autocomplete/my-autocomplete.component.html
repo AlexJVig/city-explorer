@@ -1,8 +1,10 @@
 <div class="pos-rel">
-    <input id="search" placeholder="Enter a city" type="text" size=30>
-    <div class="auto-complete-dropdown">
-        <div *ngFor='let city of cityList.cities'>
-            {{city}}
+    <input id="search" [(ngModel)]="searchValue" (click)="toggleDropDown()" placeholder="Enter a city" type="text" size=30>
+    <div clickOutside (clickOutside)="toggleDropDown()" *ngIf="showDropDown" class="auto-complete-dropdown">
+        <div>
+            <div class="state" *ngFor='let city of cityList.cities | searchFilter: getSearchValue()'>
+                {{city}}
+            </div>
         </div>
     </div>
 </div>

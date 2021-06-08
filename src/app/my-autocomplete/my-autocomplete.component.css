@@ -10,3 +10,14 @@
     background: #F6F6F6;
     overflow-y: auto;
 }
+
+.state {
+    padding: 10px;
+    font-family: sans-serif;
+    color: #A550BC;
+}
+
+.state:hover {
+    color: ivory;
+    background: #C2C2C2;
+}

@@ -12,7 +12,5 @@ export class ResourceService {
 
   getCities() {
     return this.http.get(this.getCitiesUrl);
-    // return of('{"cities":["Jerusalem","New York","Paris","Rome","Cairo","London","Tokyo","Tel Aviv"]}');
-    // return '{"cities":["Jerusalem","New York","Paris","Rome","Cairo","London","Tokyo","Tel Aviv"]}';
   }
 }

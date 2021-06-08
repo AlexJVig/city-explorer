@@ -10,11 +10,23 @@ export class MyAutocompleteComponent implements OnInit {
 
   cityList = { cities: [] };
 
+  showDropDown = false;
+
+  searchValue = "";
+
   constructor(private resourceService: ResourceService) { }
 
   ngOnInit(): void {
     this.resourceService.getCities()
       .subscribe((data: any) => this.cityList.cities = data.cities);
+  }
+
+  toggleDropDown() {
+    this.showDropDown = !this.showDropDown;
+  }
+
+  getSearchValue() {
+    return this.searchValue;
   }
 
 }
