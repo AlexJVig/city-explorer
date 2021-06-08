@@ -11,13 +11,13 @@
     overflow-y: auto;
 }
 
-.state {
+.city {
     padding: 10px;
     font-family: sans-serif;
     color: #A550BC;
 }
 
-.state:hover {
+.city:hover {
     color: ivory;
     background: #C2C2C2;
 }

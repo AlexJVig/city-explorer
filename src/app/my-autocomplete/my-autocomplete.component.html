@@ -2,7 +2,7 @@
     <input id="search" [(ngModel)]="searchValue" (click)="toggleDropDown()" placeholder="Enter a city" type="text" size=30>
     <div clickOutside (clickOutside)="toggleDropDown()" *ngIf="showDropDown" class="auto-complete-dropdown">
         <div>
-            <div class="state" *ngFor='let city of cityList.cities | searchFilter: getSearchValue()'>
+            <div (click)="selectValue(city)" class="city" *ngFor='let city of cityList.cities | searchFilter: getSearchValue()'>
                 {{city}}
             </div>
         </div>

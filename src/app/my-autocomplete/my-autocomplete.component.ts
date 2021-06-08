@@ -29,4 +29,9 @@ export class MyAutocompleteComponent implements OnInit {
     return this.searchValue;
   }
 
+  selectValue(cityName: any) {
+    this.searchValue = cityName;
+    this.showDropDown = false;
+  }
+
 }
