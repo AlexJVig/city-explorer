@@ -9,13 +9,17 @@ import { StoreModule } from '@ngrx/store';
 import { MyAutocompleteComponent } from './my-autocomplete/my-autocomplete.component';
 import { AutocompleteDirective } from './autocomplete.directive';
 import { SearchFilterPipe } from './filter-pipe';
+import { GalleryComponent } from './gallery/gallery.component';
+import { GalleryNavigatorComponent } from './gallery-navigator/gallery-navigator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyAutocompleteComponent,
     AutocompleteDirective,
-    SearchFilterPipe
+    SearchFilterPipe,
+    GalleryComponent,
+    GalleryNavigatorComponent
   ],
   imports: [
     BrowserModule,
