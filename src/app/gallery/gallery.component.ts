@@ -22,7 +22,7 @@ export class GalleryComponent implements OnChanges {
     let query = changes.galleryInput.currentValue;
 
     if (query !== '') {
-      client.photos.search({ query, orientation: 'landscape', page: 5, per_page: 1 }).then(photos => {
+      client.photos.search({ query, orientation: 'landscape', per_page: 5 }).then(photos => {
         this.photoResource = photos;
         console.log(this.photoResource);
         this.switchPhoto(0);
@@ -31,7 +31,6 @@ export class GalleryComponent implements OnChanges {
   }
 
   switchPhoto(photoIndex: number) {
-    photoIndex = photoIndex;
     this.currentImagePath = this.photoResource.photos[photoIndex].src.large;
   }
 
