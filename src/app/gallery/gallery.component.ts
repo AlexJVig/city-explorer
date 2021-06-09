@@ -23,9 +23,16 @@ export class GalleryComponent implements OnChanges {
   
   currentImagePreview = '';
 
+  isLoading: boolean = false;
+
+  showActions: boolean = false;
+
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
+    this.isLoading = true;
+    this.showActions = false;
+
     let query = changes.galleryInput.currentValue;
 
     if (query !== '') {
@@ -34,12 +41,16 @@ export class GalleryComponent implements OnChanges {
         this.switchPhoto(0);
         this.currentCity = query;
       });
+    } else {
+      this.isLoading = false;
     }
   }
 
   switchPhoto(photoIndex: number) {
     this.currentImagePath = this.photoResource.photos[photoIndex].src.medium;
     this.currentImagePreview = this.photoResource.photos[photoIndex].src.tiny;
+    this.isLoading = false;
+    this.showActions = true;
   }
 
   addToFavorites() {

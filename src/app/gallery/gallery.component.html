@@ -1,3 +1,4 @@
 <img [src]="currentImagePath" />
-<div class="add-to-favorites" (click)="addToFavorites()">+</div>
-<app-gallery-navigator (navigationEvent)="switchPhoto($event)"></app-gallery-navigator>
+<div *ngIf="showActions" class="add-to-favorites" (click)="addToFavorites()">+</div>
+<app-gallery-navigator *ngIf="showActions" (navigationEvent)="switchPhoto($event)"></app-gallery-navigator>
+<h1 *ngIf="isLoading">Loading...</h1>
