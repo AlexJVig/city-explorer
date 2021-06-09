@@ -12,7 +12,6 @@ import { SearchFilterPipe } from './filter-pipe';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryNavigatorComponent } from './gallery-navigator/gallery-navigator.component';
 import { FavoriteCollectionComponent } from './favorite-collection/favorite-collection.component';
-import { FavoritePhotoComponent } from './favorite-photo/favorite-photo.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import { FavoritePhotoComponent } from './favorite-photo/favorite-photo.componen
     SearchFilterPipe,
     GalleryComponent,
     GalleryNavigatorComponent,
-    FavoriteCollectionComponent,
-    FavoritePhotoComponent
+    FavoriteCollectionComponent
   ],
   imports: [
     BrowserModule,

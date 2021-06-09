@@ -21,4 +21,10 @@ export class FavoriteCollectionComponent implements OnChanges {
     }
   }
 
+  removeFromFavorites(srcToRemove: any) {
+    this.favoriteImages = this.favoriteImages.filter((obj: any) => {
+      return obj.previewSrc !== srcToRemove;
+    });
+  }
+
 }
