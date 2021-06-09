@@ -1,0 +1,9 @@
+<div class="collection-style">
+    <div class="" *ngFor="let currentImage of favoriteImages">
+        <div>
+            <img src="{{ currentImage.previewSrc }}">
+            <div >{{ currentImage.city }}</div>
+            <div class="remove-from-favorites">-</div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
-import { Component, OnChanges, Input, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, Input, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { createClient } from 'pexels';
+import { Favorite } from '../favorite-collection/favorites.model';
 
 const client = createClient('563492ad6f9170000100000122bbd5b61dd3428b85b45b0b0053b30a');
 
@@ -12,9 +13,15 @@ export class GalleryComponent implements OnChanges {
 
   @Input() galleryInput = '';
 
+  @Output() addToFavoritesEvent = new EventEmitter<Favorite>();
+
   photoResource: any = {};
 
   currentImagePath = '';
+
+  currentCity = '';
+  
+  currentImagePreview = '';
 
   constructor() { }
 
@@ -26,12 +33,23 @@ export class GalleryComponent implements OnChanges {
         this.photoResource = photos;
         console.log(this.photoResource);
         this.switchPhoto(0);
+        this.currentCity = query;
       });
     }
   }
 
   switchPhoto(photoIndex: number) {
-    this.currentImagePath = this.photoResource.photos[photoIndex].src.large;
+    this.currentImagePath = this.photoResource.photos[photoIndex].src.medium;
+    this.currentImagePreview = this.photoResource.photos[photoIndex].src.tiny;
+  }
+
+  addToFavorites() {
+    let args: Favorite = {
+      city: this.currentCity,
+      previewSrc: this.currentImagePreview
+    };
+    
+    this.addToFavoritesEvent.emit(args);
   }
 
 }

@@ -1,0 +1,10 @@
+.add-to-favorites {
+    height: 20px;
+    width: 20px;
+    float: left;
+    border-style: solid;
+    color: navy;
+    background-color: lawngreen;
+    border-width: 4px;
+    border-color: orangered;
+}

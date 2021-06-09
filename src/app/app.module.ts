@@ -11,6 +11,8 @@ import { AutocompleteDirective } from './autocomplete.directive';
 import { SearchFilterPipe } from './filter-pipe';
 import { GalleryComponent } from './gallery/gallery.component';
 import { GalleryNavigatorComponent } from './gallery-navigator/gallery-navigator.component';
+import { FavoriteCollectionComponent } from './favorite-collection/favorite-collection.component';
+import { FavoritePhotoComponent } from './favorite-photo/favorite-photo.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { GalleryNavigatorComponent } from './gallery-navigator/gallery-navigator
     AutocompleteDirective,
     SearchFilterPipe,
     GalleryComponent,
-    GalleryNavigatorComponent
+    GalleryNavigatorComponent,
+    FavoriteCollectionComponent,
+    FavoritePhotoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]

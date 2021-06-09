@@ -1,0 +1,16 @@
+.collection-style {
+    min-width: 400px;
+    min-height: 500px;
+    float: left;
+}
+
+.stack-container {
+    position: absolute;
+}
+
+.remove-from-favorites {
+    width: 20px;
+    height: 20px;
+    border-style: solid;
+    border-width: 1px;
+}

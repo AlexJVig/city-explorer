@@ -11,8 +11,14 @@ export class AppComponent {
 
   searchQuery = '';
 
+  newFavorite = '';
+
   updateQuery(newQuery: string) {
     this.searchQuery = newQuery;
+  }
+
+  receiveFavoriteImage(favoriteImage: any) {
+    this.newFavorite = favoriteImage;
   }
 
 }
