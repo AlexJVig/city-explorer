@@ -1,9 +1,11 @@
 <div class="collection-style">
-    <div class="" *ngFor="let currentImage of favoriteImages">
-        <div>
+    <div *ngFor="let currentImage of favoriteImages">
+        <div style="display: flex;">
             <img src="{{ currentImage.previewSrc }}">
-            <div >{{ currentImage.city }}</div>
-            <div (click)="removeFromFavorites(currentImage.previewSrc)" class="remove-from-favorites">-</div>
+            <div>
+                <div style="margin: 5px;">{{ currentImage.city }}</div>
+                <div (click)="removeFromFavorites(currentImage.previewSrc)" class="remove-from-favorites">-</div>
+            </div>
         </div>
     </div>
 </div>

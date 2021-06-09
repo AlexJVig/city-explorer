@@ -19,12 +19,13 @@ export class FavoriteCollectionComponent implements OnChanges {
       return obj.previewSrc === imageData.previewSrc;
     });
     
-    if (imageData && existingImage.length === 0) {
+    if (existingImage.length === 0) {
       this.favoriteImages.push(imageData);
     }
   }
 
   removeFromFavorites(srcToRemove: any) {
+    console.log(srcToRemove);
     this.favoriteImages = this.favoriteImages.filter((obj: any) => {
       return obj.previewSrc !== srcToRemove;
     });
