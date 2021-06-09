@@ -18,3 +18,7 @@
     cursor: pointer;
     margin: 15px;
 }
+
+.favorite-entry {
+    margin-bottom: 10px;
+}

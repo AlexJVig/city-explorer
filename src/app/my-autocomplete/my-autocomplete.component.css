@@ -1,5 +1,6 @@
 .pos-rel {
     position: relative;
+    margin-bottom: 10px;
 }
 
 .auto-complete-dropdown {
