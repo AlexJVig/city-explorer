@@ -19,7 +19,7 @@ export class FavoriteCollectionComponent implements OnChanges {
       return obj.previewSrc === imageData.previewSrc;
     });
     
-    if (existingImage.length === 0) {
+    if (imageData.previewSrc && existingImage.length === 0) {
       this.favoriteImages.push(imageData);
     }
   }
