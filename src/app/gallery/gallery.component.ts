@@ -31,7 +31,6 @@ export class GalleryComponent implements OnChanges {
     if (query !== '') {
       client.photos.search({ query, orientation: 'landscape', per_page: 5 }).then(photos => {
         this.photoResource = photos;
-        console.log(this.photoResource);
         this.switchPhoto(0);
         this.currentCity = query;
       });

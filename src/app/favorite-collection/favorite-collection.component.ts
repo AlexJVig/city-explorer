@@ -15,8 +15,11 @@ export class FavoriteCollectionComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     let imageData = changes.newFavorite.currentValue;
-
-    if (imageData) {
+    let existingImage = this.favoriteImages.filter((obj: any) => {
+      return obj.previewSrc === imageData.previewSrc;
+    });
+    
+    if (imageData && existingImage.length === 0) {
       this.favoriteImages.push(imageData);
     }
   }
