@@ -3,6 +3,7 @@
 }
 
 .auto-complete-dropdown {
+    position: absolute;
     z-index: 1;
     width: 220px;
     max-height: 300px;

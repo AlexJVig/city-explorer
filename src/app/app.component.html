@@ -1,4 +1,9 @@
 <h1>{{title}}</h1>
-<app-favorite-collection [newFavorite]="newFavorite"></app-favorite-collection>
-<app-my-autocomplete (searchLaunchEvent)="updateQuery($event)"></app-my-autocomplete>
-<app-gallery [galleryInput]="searchQuery" (addToFavoritesEvent)="receiveFavoriteImage($event)"></app-gallery>
+<div style="display: flex;">
+    <app-favorite-collection [newFavorite]="newFavorite"></app-favorite-collection>
+    
+    <div>
+        <app-my-autocomplete (searchLaunchEvent)="updateQuery($event)"></app-my-autocomplete>
+        <app-gallery [galleryInput]="searchQuery" (addToFavoritesEvent)="receiveFavoriteImage($event)"></app-gallery>
+    </div>
+</div>
