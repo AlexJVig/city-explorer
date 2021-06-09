@@ -27,6 +27,10 @@ export class MyAutocompleteComponent implements OnInit {
     this.showDropDown = !this.showDropDown;
   }
 
+  openDropDown() {
+    this.showDropDown = true;
+  }
+
   getSearchValue() {
     return this.searchValue;
   }
